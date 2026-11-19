@@ -1,0 +1,318 @@
+<mxfile host="app.diagrams.net" type="device">
+  <diagram id="pagina0" name="Parte 1 - FastAPI + HuggingFace">
+    <mxGraphModel dx="1100" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c" value="Cliente&#10;curl / Swagger UI" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="170" y="40" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="api" value="FastAPI - parte1.py&#10;/q1/generate e /q2/translate" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="140" y="120" width="340" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u" value="utils.py&#10;get_pipeline com lru_cache&#10;split_sentences" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="140" y="210" width="340" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="m1" value="Questao 1&#10;transformers.pipeline&#10;text-generation - gpt2" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="20" y="310" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="m2" value="Questao 2&#10;transformers.pipeline&#10;translation - opus-mt-en-fr" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="340" y="310" width="260" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="t" value="torch - inferencia em CPU" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="170" y="430" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="r" value="FastAPI devolve JSON&#10;texto_gerado / texto_traduzido" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="140" y="520" width="340" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leg0" value="cliente" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="630" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" value="FastAPI" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="180" y="630" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" value="utils.py" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="320" y="630" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" value="modelo local" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="460" y="630" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="a0" value="POST JSON" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c" target="api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="chamada de funcao" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="api" target="u">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="u" target="m1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="u" target="m2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="m1" target="t">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="m2" target="t">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="t" target="r">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="pagina1" name="Parte 2 - Questao 1 - Chatbot com Fake LLM">
+    <mxGraphModel dx="1100" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c" value="Cliente&#10;POST /q1/chat" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="130" y="40" width="300" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="api" value="FastAPI - parte2.py&#10;valida o campo message" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="110" y="120" width="340" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u" value="utils.fake_chat&#10;normalize + busca em FAKE_ANSWERS" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="110" y="210" width="340" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p" value="LangChain - PromptTemplate&#10;Usuario: {question}" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="110" y="300" width="340" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="l" value="LangChain - FakeListLLM&#10;responses=[resposta fixa]" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="110" y="390" width="340" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s" value="LangChain - StrOutputParser" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="110" y="480" width="340" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="r" value="FastAPI devolve JSON&#10;llm / pergunta / resposta" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="110" y="560" width="340" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leg0" value="cliente" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="20" y="670" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" value="FastAPI" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="160" y="670" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" value="utils.py" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="300" y="670" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" value="LangChain" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="440" y="670" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="a0" value="message" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c" target="api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="api" target="u">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="resposta escolhida" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="u" target="p">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="p" target="l">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="l" target="s">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s" target="r">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="pagina2" name="Parte 2 - Questao 2 - LangChain + OpenAI">
+    <mxGraphModel dx="1100" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c" value="Cliente&#10;POST /q2/translate" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="130" y="40" width="320" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="api" value="FastAPI - parte2.py&#10;valida JSON / trata erro 502" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="110" y="120" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p" value="LangChain - ChatPromptTemplate&#10;system: You are a professional translator&#10;human: {text}" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="110" y="210" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="m" value="LangChain - ChatOpenAI&#10;instancia cacheada com lru_cache" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="110" y="310" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="o" value="API da OpenAI&#10;modelo gpt-4o-mini&#10;autenticacao por OPENAI_API_KEY" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="110" y="400" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="s" value="LangChain - StrOutputParser" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="110" y="500" width="360" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="r" value="FastAPI devolve JSON&#10;modelo / texto_traduzido" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="110" y="580" width="360" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leg0" value="cliente" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="20" y="690" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" value="FastAPI" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="160" y="690" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" value="LangChain" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="300" y="690" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" value="servico externo" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="440" y="690" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="a0" value="text" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c" target="api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="api" target="p">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="p" target="m">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="m" target="o">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="traducao" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="o" target="s">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s" target="r">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="pagina3" name="Parte 2 - Questao 3 - LangChain + HuggingFace">
+    <mxGraphModel dx="1100" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c" value="Cliente&#10;POST /q3/translate" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="110" y="40" width="340" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="api" value="FastAPI - parte2.py" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="90" y="120" width="380" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="u" value="utils.split_sentences&#10;quebra o texto em sentencas" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="90" y="200" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p" value="LangChain - PromptTemplate {text}" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="90" y="290" width="380" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="h" value="LangChain - HuggingFacePipeline&#10;from_model_id(task=translation)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="90" y="370" width="380" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="m" value="transformers.pipeline&#10;MarianMTModel opus-mt-en-de&#10;carregado uma vez por processo" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="610" y="360" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="t" value="torch - CPU ou GPU" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="650" y="480" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s" value="LangChain - StrOutputParser" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="90" y="470" width="380" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="r" value="FastAPI devolve JSON&#10;texto_traduzido em alemao" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="90" y="550" width="380" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="leg0" value="cliente" style="rounded=1;arcSize=40;whiteSpace=wrap;html=1;fontSize=12;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="20" y="660" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" value="FastAPI" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="160" y="660" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" value="utils.py" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="300" y="660" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" value="LangChain" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="440" y="660" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4" value="modelo local" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="580" y="660" width="130" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="a0" value="text" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="c" target="api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="api" target="u">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="u" target="p">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="p" target="h">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="chamada local" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="h" target="m">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="m" target="t">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="h" target="s">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=blockThin;endFill=1;strokeColor=#444444;fontSize=11;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="s" target="r">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="pagina4" name="Parte 2 - Questao 6 - Tabela comparativa">
+    <mxGraphModel dx="1100" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="c0_0" value="Criterio" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c0_1" value="FastAPI puro (P1 Q1 e Q2)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="60" width="290" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c0_2" value="FastAPI + LangChain (P2 Q2 e Q3)" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#dae8fc;strokeColor=#6c8ebf;align=center;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="60" width="290" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="c1_0" value="Facilidade de uso&#10;e configuracao" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c1_1" value="Duas dependencias e tres linhas&#10;para o pipeline. Sem abstracao&#10;nova, mas trocar de provedor&#10;exige reescrever o codigo." style="rounded=0;whiteSpace=wrap;html=1;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;fillColor=#f8f8f8;strokeColor=#999999;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="190" y="100" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c1_2" value="Exige entender Runnable,&#10;PromptTemplate e parser.&#10;Em troca, a mesma cadeia serve&#10;para Fake LLM, OpenAI ou HF." style="rounded=0;whiteSpace=wrap;html=1;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;fillColor=#f8f8f8;strokeColor=#999999;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="480" y="100" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c2_0" value="Latencia e&#10;desempenho" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="190" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c2_1" value="Local, sem rede. Dominada pela&#10;CPU: centenas de ms a alguns&#10;segundos por frase. Primeira&#10;chamada carrega o modelo." style="rounded=0;whiteSpace=wrap;html=1;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;fillColor=#f8f8f8;strokeColor=#999999;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="190" y="190" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c2_2" value="Com OpenAI: rede de 0,3 a 2 s,&#10;mas hardware potente.&#10;Com HF local: igual a coluna&#10;ao lado mais um pequeno overhead." style="rounded=0;whiteSpace=wrap;html=1;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;fillColor=#f8f8f8;strokeColor=#999999;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="480" y="190" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c3_0" value="Flexibilidade de&#10;modelos" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="280" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c3_1" value="Boa dentro do HuggingFace&#10;(basta mudar o model_id);&#10;fora dele e preciso escrever&#10;um cliente novo." style="rounded=0;whiteSpace=wrap;html=1;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;fillColor=#f8f8f8;strokeColor=#999999;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="190" y="280" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c3_2" value="Interface unica para modelo&#10;local e de API, troca por&#10;variavel de ambiente, alem de&#10;memoria, RAG e agentes." style="rounded=0;whiteSpace=wrap;html=1;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;fillColor=#f8f8f8;strokeColor=#999999;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="480" y="280" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c4_0" value="Custo e&#10;escalabilidade" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="370" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c4_1" value="Custo fixo de infra e custo&#10;marginal zero. Escalar replica&#10;o modelo em cada worker&#10;(RAM, GPU, cold start)." style="rounded=0;whiteSpace=wrap;html=1;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;fillColor=#f8f8f8;strokeColor=#999999;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="190" y="370" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c4_2" value="Custo por token sujeito a&#10;rate limit, mas escala sem&#10;provisionar GPU. Com HF local,&#10;herda as limitacoes locais." style="rounded=0;whiteSpace=wrap;html=1;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;fillColor=#f8f8f8;strokeColor=#999999;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="480" y="370" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c5_0" value="Prototipo x&#10;producao" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="460" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c5_1" value="Prototipo direto e didatico.&#10;Producao exige batching, fila&#10;e servidor de inferencia&#10;dedicado." style="rounded=0;whiteSpace=wrap;html=1;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;fillColor=#f8f8f8;strokeColor=#999999;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="190" y="460" width="290" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="c5_2" value="Prototipo imbativel com Fake LLM.&#10;Producao viavel com atencao a&#10;versionamento, observabilidade,&#10;retries e controle de custo." style="rounded=0;whiteSpace=wrap;html=1;dashed=1;verticalAlign=top;fontStyle=1;fontSize=12;fillColor=#f8f8f8;strokeColor=#999999;align=left;verticalAlign=middle;spacingLeft=6;" vertex="1" parent="1">
+          <mxGeometry x="480" y="460" width="290" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
